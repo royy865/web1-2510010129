@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs><pattern id="p" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M0 30 L10 10 L20 30 L30 10 L40 30" fill="none" stroke="#e0a526" stroke-width="5"/></pattern></defs>
+  <rect width="600" height="400" fill="#8b1e3f"/>
+  <rect width="600" height="400" fill="url(#p)" opacity="0.55"/>
+  <rect x="60" y="150" width="480" height="100" rx="14" fill="#ffffff" opacity="0.92"/>
+  <text x="300" y="196" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#8b1e3f">Motif Gigi Haruan</text>
+  <text x="300" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#444">Sasirangan Banua · gambar contoh</text>
+</svg>
