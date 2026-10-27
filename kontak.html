@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulir pemesanan produk Sasirangan Banua.">
+  <title>Pesan Produk | Sasirangan Banua</title>
+</head>
+<body>
+
+  <header class="header-situs">
+    <p class="logo"><a href="index.html">Sasirangan Banua</a></p>
+    <nav aria-label="Navigasi utama">
+      <ul class="menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="index.html#katalog">Katalog</a></li>
+        <li><a href="index.html#tentang">Tentang</a></li>
+        <li><a href="kontak.html" aria-current="page">Pesan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="bagian" id="pesan">
+      <h1>Formulir Pemesanan</h1>
+      <p>Isi formulir berikut. Kolom bertanda <strong>*</strong> wajib diisi.</p>
+
+      <form id="form-pesan" class="form-pesan" action="#" method="get">
+        <div class="kolom">
+          <label for="nama">Nama lengkap *</label>
+          <input type="text" id="nama" name="nama" required minlength="3" autocomplete="name">
+        </div>
+
+        <div class="kolom">
+          <label for="wa">Nomor WhatsApp *</label>
+          <input type="tel" id="wa" name="wa" required
+            pattern="08[0-9]{8,11}"
+            placeholder="Contoh: 081234567890" autocomplete="tel">
+        </div>
+
+        <div class="kolom">
+          <label for="email">Surel</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+        </div>
+
+        <div class="kolom">
+          <label for="produk">Produk yang dipesan *</label>
+          <select id="produk" name="produk" required>
+            <option value="">-- Pilih produk --</option>
+            <option>Kain Motif Gigi Haruan</option>
+            <option>Kain Motif Kambang Kacang</option>
+            <option>Selendang Iris Pudak</option>
+            <option>Kemeja Bayam Raja</option>
+            <option>Tas Naga Balimbur</option>
+            <option>Gamis Ombak Sinapur Karang</option>
+          </select>
+        </div>
+
+        <div class="kolom">
+          <label for="jumlah">Jumlah *</label>
+          <input type="number" id="jumlah" name="jumlah"
+            min="1" max="50" value="1" required>
+        </div>
+
+        <fieldset>
+          <legend>Metode pengambilan *</legend>
+          <label>
+            <input type="radio" name="pengambilan" value="Ambil di galeri" checked>
+            Ambil di galeri
+          </label>
+          <label>
+            <input type="radio" name="pengambilan" value="Dikirim ke alamat">
+            Dikirim ke alamat
+          </label>
+        </fieldset>
+
+        <div class="kolom">
+          <label for="catatan">Catatan tambahan</label>
+          <textarea id="catatan" name="catatan" rows="4" maxlength="300"
+            placeholder="Contoh: ukuran L, warna dominan merah"></textarea>
+        </div>
+
+        <label class="cek">
+          <input type="checkbox" id="setuju" name="setuju" required>
+          Saya setuju data ini hanya dipakai untuk memproses pesanan. *
+        </label>
+
+        <button type="submit" class="tombol">Kirim Pesanan</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer-situs">
+    <p>&copy; 2026 Sasirangan Banua &middot; Kampung Sasirangan, Banjarmasin</p>
+    <p>Dibuat oleh Muhammad Royyan (2510010129) &middot; Praktikum Pemrograman Web 1 UNISKA MAB</p>
+  </footer>
+
+</body>
+</html>
