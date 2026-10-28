@@ -1,0 +1,9 @@
+[
+  { "judul": "Tafsir Juz 'Amma", "ustadz": "Ust. Ahmad Fauzi", "hari": "Senin" },
+  { "judul": "Fikih Muamalah untuk UMKM", "ustadz": "Ust. Rahmadi", "hari": "Rabu" },
+  {
+    "judul": "Adab Penuntut Ilmu",
+    "ustadz": "Ust. Fulan<img src=x onerror=\"alert('Data JSON ini menyisipkan skrip!')\">",
+    "hari": "Jumat"
+  }
+]

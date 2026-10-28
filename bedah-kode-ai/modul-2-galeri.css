@@ -1,0 +1,83 @@
+/* Versi perbaikan — Bedah Kode AI Modul 2 */
+:root {
+  --warna-judul: #a3122b;
+  /* merah gelap, kontras ±7,8:1 dengan putih */
+  --warna-teks: #333333;
+  /* kontras ±12,6:1 */
+  --warna-tombol: #7a4b00;
+  /* cokelat gelap; teks putih kontras ±7,4:1 */
+  --warna-fokus: #1d4ed8;
+  /* biru tua, kontras ±6,7:1 dengan putih */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* lebar sudah termasuk padding & border */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* selalu beri cadangan */
+  font-size: 1rem;
+  /* 16px, mudah dibaca */
+  line-height: 1.6;
+  color: var(--warna-teks);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  /* tidak lebih lebar dari 1200px, tapi bisa menyusut */
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#judul-utama,
+.kartu h3 {
+  color: var(--warna-judul);
+  /* tanpa !important */
+}
+
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.kartu {
+  padding: 1.25rem;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+}
+
+.kartu img {
+  display: block;
+  width: 100%;
+  /* mengikuti lebar kartu */
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  /* tidak gepeng */
+}
+
+.kartu h3 {
+  font-size: 1.15rem;
+}
+
+.tombol {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  background-color: var(--warna-tombol);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Fokus keyboard tetap terlihat */
+a:focus-visible {
+  outline: 3px solid var(--warna-fokus);
+  outline-offset: 2px;
+}

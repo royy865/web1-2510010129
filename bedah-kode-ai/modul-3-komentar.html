@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bedah Kode AI - Modul 3</title>
+</head>
+<body>
+  <h1>Pencarian Produk &amp; Komentar</h1>
+
+  <input id="cari" placeholder="cari...">
+  <div id="hasil"></div>
+
+  <h2>Tulis Komentar</h2>
+  <input id="nama" placeholder="Nama">
+  <textarea id="komentar"></textarea>
+  <button onclick="kirim()">Kirim</button>
+  <div id="daftar-komentar"></div>
+
+  <script>
+    var produk = ["Kain Gigi Haruan", "Selendang Iris Pudak", "Kemeja Bayam Raja"];
+
+    document.getElementById("cari").onkeyup = function () {
+      var kata = document.getElementById("cari").value;
+      var hasil = "";
+      for (var i = 0; i <= produk.length; i++) {
+        if (produk[i].indexOf(kata) != -1) {
+          hasil += "<p>" + produk[i] + "</p>";
+        }
+      }
+      document.getElementById("hasil").innerHTML = hasil;
+    };
+
+    function kirim() {
+      var nama = document.getElementById("nama").value;
+      var komentar = document.getElementById("komentar").value;
+      if (nama == "" || komentar == "") {
+        alert("isi dulu!");
+      }
+      document.getElementById("daftar-komentar").innerHTML +=
+        "<p><b>" + nama + "</b>: " + komentar + "</p>";
+    }
+  </script>
+</body>
+</html>
