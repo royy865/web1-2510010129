@@ -1,0 +1,223 @@
+/* =========================================================
+ Sasirangan Banua — style.css
+ Pendekatan: mobile-first (gaya dasar untuk HP, lalu
+ disesuaikan untuk layar lebar dengan media query)
+ ========================================================= */
+/* ---------- 1. Variabel (custom properties) ---------- */
+:root {
+    --warna-utama: #8b1e3f;
+    /* merah marun sasirangan */
+    --warna-utama-gelap: #6a142f;
+    --warna-aksen: #e0a526;
+    /* kuning kunyit */
+    --warna-krem: #fbe9c6;
+    --warna-teks: #222222;
+    --warna-teks-lembut: #555555;
+    --warna-latar: #fffaf3;
+    --warna-kartu: #ffffff;
+    --radius: 12px;
+    --bayangan: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --lebar-maks: 1100px;
+}
+
+/* ---------- 2. Reset ringan & dasar ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    /* agar judul tidak tertutup header sticky */
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--warna-teks);
+    background-color: var(--warna-latar);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--warna-utama);
+}
+
+/* Penanda fokus untuk pengguna keyboard — JANGAN dihapus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--warna-utama-gelap);
+    outline-offset: 2px;
+}
+
+/* ---------- 3. Header & navigasi (Flexbox) ---------- */
+.header-situs {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    /* HP: logo di atas menu */
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--warna-utama);
+    color: #ffffff;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a[aria-current="page"] {
+    background-color: var(--warna-utama-gelap);
+}
+
+.header-situs a:focus-visible {
+    outline-color: #ffffff;
+    /* fokus putih agar terlihat di latar header yang gelap */
+}
+
+/* ---------- 4. Hero ---------- */
+.hero {
+    padding: 4rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--warna-krem), #f6d7a7);
+}
+
+.hero h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.2;
+    color: var(--warna-utama);
+}
+
+.hero p {
+    max-width: 40rem;
+    margin: 0 auto 1.5rem;
+}
+
+/* ---------- 5. Tombol ---------- */
+.tombol {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--warna-utama);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.tombol:hover {
+    background-color: var(--warna-utama-gelap);
+    transform: translateY(-2px);
+}
+
+/* ---------- 6. Bagian (section) umum ---------- */
+.bagian {
+    max-width: var(--lebar-maks);
+    margin-inline: auto;
+    padding: 3rem 1rem;
+}
+
+.bagian h1,
+.bagian h2 {
+    margin-top: 0;
+    color: var(--warna-utama);
+}
+
+/* ---------- 7. Katalog (CSS Grid) ---------- */
+.katalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.kartu {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background-color: var(--warna-kartu);
+    box-shadow: var(--bayangan);
+    transition: transform 0.2s ease;
+}
+
+.kartu:hover {
+    transform: translateY(-4px);
+}
+
+.kartu img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.kartu-isi {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* isi kartu mengisi sisa tinggi */
+    padding: 1rem;
+}
+
+.kartu h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+}
+
+.kartu p {
+    margin: 0 0 0.75rem;
+    color: var(--warna-teks-lembut);
+}
+
+.kartu .harga {
+    margin-top: auto;
+    /* harga selalu di bagian bawah kartu */
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--warna-utama);
+}
