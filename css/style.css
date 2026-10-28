@@ -221,3 +221,120 @@ textarea:focus-visible {
     font-weight: 700;
     color: var(--warna-utama);
 }
+
+/* ---------- 8. Tabel ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--warna-kartu);
+    box-shadow: var(--bayangan);
+}
+
+caption {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eeeeee;
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--warna-utama);
+    color: #ffffff;
+}
+
+/* ---------- 9. Formulir ---------- */
+.form-pesan {
+    display: grid;
+    gap: 1rem;
+    max-width: 40rem;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    background-color: var(--warna-kartu);
+    box-shadow: var(--bayangan);
+}
+
+.kolom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+label,
+legend {
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #b5b5b5;
+    border-radius: 8px;
+    font: inherit;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+fieldset label,
+.cek {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+/* ---------- 10. Footer ---------- */
+.footer-situs {
+    padding: 2rem 1rem;
+    background-color: #2b2b2b;
+    color: #eeeeee;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-situs p {
+    margin: 0.25rem 0;
+}
+
+/* ---------- 11. Responsif: tablet & desktop ---------- */
+@media (min-width: 768px) {
+    .header-situs {
+        flex-direction: row;
+        /* logo kiri, menu kanan */
+        justify-content: space-between;
+        padding-inline: 2rem;
+    }
+
+    .hero {
+        padding: 6rem 2rem;
+    }
+}
+
+/* Hormati pengguna yang tidak ingin banyak animasi */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
