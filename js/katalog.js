@@ -11,8 +11,7 @@ const katalog = [
     kategori: "kain",
     harga: 185000,
     gambar: "img/gigi-haruan.svg",
-    deskripsi:
-      "Kain katun 2 meter bermotif zig-zag menyerupai gigi ikan haruan.",
+    deskripsi: "Kain sasirangan dengan motif zig-zag khas Gigi Haruan.",
   },
   {
     id: 2,
@@ -20,7 +19,7 @@ const katalog = [
     kategori: "kain",
     harga: 175000,
     gambar: "img/kambang-kacang.svg",
-    deskripsi: "Motif bunga kacang yang melambangkan keakraban dan kerukunan.",
+    deskripsi: "Kain dengan motif bunga yang melambangkan kerukunan.",
   },
   {
     id: 3,
@@ -28,9 +27,48 @@ const katalog = [
     kategori: "aksesoris",
     harga: 120000,
     gambar: "img/iris-pudak.svg",
-    deskripsi: "Selendang ringan bermotif irisan daun pudak (pandan).",
+    deskripsi: "Selendang ringan dengan motif Iris Pudak.",
   },
-  // ... lanjutkan untuk semua item (minimal 8 untuk tema Anda)
+  {
+    id: 4,
+    nama: "Kain Motif Bayam Raja",
+    kategori: "kain",
+    harga: 190000,
+    gambar: "img/bayam-raja.svg",
+    deskripsi: "Kain sasirangan dengan motif Bayam Raja.",
+  },
+  {
+    id: 5,
+    nama: "Kain Motif Naga Balimbur",
+    kategori: "kain",
+    harga: 210000,
+    gambar: "img/naga-balimbur.svg",
+    deskripsi: "Kain sasirangan dengan motif Naga Balimbur.",
+  },
+  {
+    id: 6,
+    nama: "Kain Motif Ombak Sinapur Karang",
+    kategori: "kain",
+    harga: 195000,
+    gambar: "img/ombak-sinapur-karang.svg",
+    deskripsi: "Kain sasirangan dengan motif Ombak Sinapur Karang.",
+  },
+  {
+    id: 7,
+    nama: "Tas Sasirangan",
+    kategori: "aksesoris",
+    harga: 95000,
+    gambar: "img/tas-sasirangan.png",
+    deskripsi: "Tas cantik berbahan kain sasirangan khas Banjar.",
+  },
+  {
+    id: 8,
+    nama: "Dompet Sasirangan",
+    kategori: "aksesoris",
+    harga: 65000,
+    gambar: "img/dompet-sasirangan.png",
+    deskripsi: "Dompet praktis dengan motif kain sasirangan.",
+  },
 ];
 
 // 2. Ambil elemen-elemen HTML yang akan dimanipulasi
@@ -99,15 +137,15 @@ function tampilkanKatalog(daftarProduk) {
 
 // 7. Menyaring katalog berdasarkan kata kunci DAN kategori aktif
 function saringKatalog() {
-    const kataKunci = inputCari.value.trim().toLowerCase();
-    const hasil = katalog.filter((produk) => {
-        const cocokKategori = kategoriAktif === "semua" || produk.kategori === kategoriAktif;
-        const cocokKata =
-            produk.nama.toLowerCase().includes(kataKunci)
-        produk.deskripsi.toLowerCase().includes(kataKunci);
-        return cocokKategori && cocokKata;
-    });
-    tampilkanKatalog(hasil);
+  const kataKunci = inputCari.value.trim().toLowerCase();
+  const hasil = katalog.filter((produk) => {
+    const cocokKategori =
+      kategoriAktif === "semua" || produk.kategori === kategoriAktif;
+    const cocokKata = produk.nama.toLowerCase().includes(kataKunci);
+    produk.deskripsi.toLowerCase().includes(kataKunci);
+    return cocokKategori && cocokKata;
+  });
+  tampilkanKatalog(hasil);
 }
 // 8. Event: setiap kali pengguna mengetik di kotak pencarian
 inputCari.addEventListener("input", saringKatalog);
