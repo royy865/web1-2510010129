@@ -1,158 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Katalog kain dan busana Sasirangan khas Banjarmasin karya pengrajin lokal.">
-  <title>Sasirangan Banua | Kain Khas Banjar</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <!-- ========== HEADER & NAVIGASI ========== -->
-  <header class="header-situs">
-    <p class="logo"><a href="index.html">Sasirangan Banua</a></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Katalog kain dan busana Sasirangan khas Banjarmasin karya pengrajin lokal."
+    />
+    <title>Sasirangan Banua | Kain Khas Banjar</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/katalog.js" defer></script>
+  </head>
+  <body>
+    <!-- ========== HEADER & NAVIGASI ========== -->
+    <header class="header-situs">
+      <p class="logo"><a href="index.html">Sasirangan Banua</a></p>
 
-    <nav aria-label="Navigasi utama">
-      <ul class="menu">
-        <li><a href="index.html" aria-current="page">Beranda</a></li>
-        <li><a href="#katalog">Katalog</a></li>
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="kontak.html">Pesan</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main> 
-  <!-- ========== HERO ========== --> 
-  <section class="hero" id="beranda"> 
-    <h1>Kain Sasirangan Asli Banjarmasin</h1> 
-    <p>Dibuat tangan oleh pengrajin Kampung Sasirangan dengan motif warisan Urang Banjar. 
-      Setiap helai kain membawa cerita tentang budaya Banua.</p> 
-    <a class="tombol" href="#katalog">Lihat Katalog</a> 
-  </section>
-    
-    <!-- ========== KATALOG ========== -->
-    <section class="bagian" id="katalog">
-      <h2>Katalog Produk</h2>
-      <p>Pilihan kain, busana, dan aksesoris Sasirangan terbaru.</p>
+      <nav aria-label="Navigasi utama">
+        <ul class="menu">
+          <li><a href="index.html" aria-current="page">Beranda</a></li>
+          <li><a href="#katalog">Katalog</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="kontak.html">Pesan</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- ========== HERO ========== -->
+      <section class="hero" id="beranda">
+        <h1>Kain Sasirangan Asli Banjarmasin</h1>
+        <p>
+          Dibuat tangan oleh pengrajin Kampung Sasirangan dengan motif warisan
+          Urang Banjar. Setiap helai kain membawa cerita tentang budaya Banua.
+        </p>
+        <a class="tombol" href="#katalog">Lihat Katalog</a>
+      </section>
 
-      <div class="katalog-grid">
+      <!-- ========== KATALOG ========== -->
+      <section class="bagian" id="katalog">
+        <h2>Katalog Produk</h2>
+        <p>Pilihan kain, busana, dan aksesoris Sasirangan terbaru.</p>
 
-        <article class="kartu">
-          <img src="img/gigi-haruan.svg"
-               alt="Kain sasirangan motif gigi haruan"
-               width="600" height="400">
-          <div class="kartu-isi">
-            <h3>Kain Motif Gigi Haruan</h3>
-            <p>Kain katun 2 meter bermotif zig-zag menyerupai gigi ikan haruan.</p>
-            <p class="harga">Rp185.000</p>
+        <div class="kontrol-katalog">
+          <div class="kolom">
+            <label for="cari">Cari produk</label>
+            <input
+              type="search"
+              id="cari"
+              placeholder="Contoh: kemeja, selendang"
+            />
           </div>
-        </article>
-
-        <article class="kartu">
-          <img src="img/kambang-kacang.svg"
-               alt="Kain sasirangan motif kambang kacang"
-               width="600" height="400">
-          <div class="kartu-isi">
-            <h3>Kain Motif Kambang Kacang</h3>
-            <p>Motif bunga kacang yang melambangkan keakraban dan kerukunan.</p>
-            <p class="harga">Rp175.000</p>
+          <div class="filter" role="group" aria-label="Filter kategori">
+            <button
+              type="button"
+              class="tombol-filter aktif"
+              data-kategori="semua"
+              aria-pressed="true"
+            >
+              Semua
+            </button>
+            <button
+              type="button"
+              class="tombol-filter"
+              data-kategori="kain"
+              aria-pressed="false"
+            >
+              Kain
+            </button>
+            <button
+              type="button"
+              class="tombol-filter"
+              data-kategori="pakaian"
+              aria-pressed="false"
+            >
+              Pakaian
+            </button>
+            <button
+              type="button"
+              class="tombol-filter"
+              data-kategori="aksesoris"
+              aria-pressed="false"
+            >
+              Aksesoris
+            </button>
           </div>
-        </article>
+        </div>
+        <p id="info-jumlah" class="info-jumlah" aria-live="polite"></p>
+        <div id="daftar-katalog" class="katalog-grid"></div>
+        <noscript
+          ><p>Aktifkan JavaScript untuk melihat katalog produk.</p></noscript
+        >
+      </section>
+      <!-- ========== TENTANG ========== -->
+      <section class="bagian" id="tentang">
+        <h2>Tentang Kami</h2>
+        <p>
+          <strong>Sasirangan Banua</strong> adalah UMKM
+          <em>(fiktif, untuk latihan)</em> yang memproduksi kain sasirangan
+          dengan teknik jahit-ikat-celup tradisional. Kami bekerja sama dengan
+          pengrajin lokal untuk menjaga warisan budaya Kalimantan Selatan.
+        </p>
 
-        <article class="kartu">
-          <img src="img/bayam-raja.svg"
-               alt="Kain sasirangan motif bayam raja"
-               width="600" height="400">
-          <div class="kartu-isi">
-            <h3>Kain Motif Bayam Raja</h3>
-            <p>Kain sasirangan dengan motif bayam raja khas Banjar.</p>
-            <p class="harga">Rp190.000</p>
-          </div>
-        </article>
+        <h3>Keunggulan Produk</h3>
+        <ul>
+          <li>Dikerjakan tangan oleh pengrajin lokal</li>
+          <li>Motif asli warisan budaya Banjar</li>
+          <li>Bahan katun, rayon, dan sutra pilihan</li>
+        </ul>
 
-        <article class="kartu">
-          <img src="img/iris-pudak.svg"
-               alt="Kain sasirangan motif iris pudak"
-               width="600" height="400">
-          <div class="kartu-isi">
-            <h3>Kain Motif Iris Pudak</h3>
-            <p>Kain sasirangan dengan motif iris pudak yang khas.</p>
-            <p class="harga">Rp180.000</p>
-          </div>
-        </article>
+        <h3>Jam Buka Galeri</h3>
+        <table>
+          <caption>
+            Jadwal buka galeri Sasirangan Banua (WITA)
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Hari</th>
+              <th scope="col">Jam Buka</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Senin–Kamis</td>
+              <td>08.00–17.00</td>
+            </tr>
+            <tr>
+              <td>Jumat</td>
+              <td>08.00–11.00 dan 14.00–17.00</td>
+            </tr>
+            <tr>
+              <td>Sabtu–Ahad</td>
+              <td>09.00–16.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
 
-        <article class="kartu">
-          <img src="img/naga-balimbur.svg"
-               alt="Kain sasirangan motif naga balimbur"
-               width="600" height="400">
-          <div class="kartu-isi">
-            <h3>Kain Motif Naga Balimbur</h3>
-            <p>Kain sasirangan dengan motif naga balimbur khas Banjar.</p>
-            <p class="harga">Rp200.000</p>
-          </div>
-        </article>
-
-        <article class="kartu">
-          <img src="img/gigi-haruan.svg"
-               alt="Kain sasirangan gigi haruan pilihan"
-               width="600" height="400">
-          <div class="kartu-isi">
-            <h3>Kain Gigi Haruan Premium</h3>
-            <p>Kain sasirangan motif gigi haruan untuk koleksi pilihan.</p>
-            <p class="harga">Rp225.000</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-    <!-- ========== TENTANG ========== -->
-    <section class="bagian" id="tentang">
-      <h2>Tentang Kami</h2>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer-situs">
       <p>
-        <strong>Sasirangan Banua</strong> adalah UMKM
-        <em>(fiktif, untuk latihan)</em> yang memproduksi kain sasirangan
-        dengan teknik jahit-ikat-celup tradisional. Kami bekerja sama
-        dengan pengrajin lokal untuk menjaga warisan budaya Kalimantan Selatan.
+        &copy; 2026 Sasirangan Banua &middot; Kampung Sasirangan, Banjarmasin
       </p>
-
-      <h3>Keunggulan Produk</h3>
-      <ul>
-        <li>Dikerjakan tangan oleh pengrajin lokal</li>
-        <li>Motif asli warisan budaya Banjar</li>
-        <li>Bahan katun, rayon, dan sutra pilihan</li>
-      </ul>
-
-      <h3>Jam Buka Galeri</h3>
-      <table>
-        <caption>Jadwal buka galeri Sasirangan Banua (WITA)</caption>
-        <thead>
-          <tr>
-            <th scope="col">Hari</th>
-            <th scope="col">Jam Buka</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Senin–Kamis</td>
-            <td>08.00–17.00</td>
-          </tr>
-          <tr>
-            <td>Jumat</td>
-            <td>08.00–11.00 dan 14.00–17.00</td>
-          </tr>
-          <tr>
-            <td>Sabtu–Ahad</td>
-            <td>09.00–16.00</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
-  
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer-situs">
-    <p>&copy; 2026 Sasirangan Banua &middot; Kampung Sasirangan, Banjarmasin</p>
-    <p>Dibuat oleh Muhammad Royyan (2510010129) &middot; Praktikum Pemrograman Web 1 UNISKA MAB</p>
-  </footer>
-</body>
+      <p>
+        Dibuat oleh Muhammad Royyan (2510010129) &middot; Praktikum Pemrograman
+        Web 1 UNISKA MAB
+      </p>
+    </footer>
+  </body>
 </html>
